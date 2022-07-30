@@ -6,46 +6,50 @@ var update = function(){
 } 
 setInterval(update, 1000);
 
-var test = $(".time");
+/* var test = $(".time");
 var test1 = $(".time")[0];
 var test2 = $(".time")[1].innerHTML;
 console.log(test);
 console.log(test1);
 console.log(test2);
+ */
+var test = $("textarea");
+var test1 = $("textarea")[0];
+console.log(test);
+console.log(test1);
 
 var timeArr = $(".time");
 
-for (var i = 0; i < timeArr.length; i++) {
+/* for (var i = 0; i < timeArr.length; i++) {
     var time = timeArr[i].innerHTML;
     console.log(time);
-}
+} */
 
 $.each(timeArr, function(index, element) 
 {
-    console.log("the index is: " + index + " The element is: " + element.innerHTML);
+    //console.log("the index is: " + index + " The element is: " + element.innerHTML);
     var time = element.innerHTML;
     var timeFormat = moment(time, 'ha');
-    console.log(timeFormat);
-    var timeNow = moment();
-    var timeNowFormatted = moment(timeNow, 'ha');
-    console.log(timeNowFormatted);
-    if (timeFormat.isBefore(timeNowFormatted))
+    //console.log(timeFormat);
+    var timeNow = moment().format('ha');
+    var timeNowFormat = moment(timeNow, 'ha');
+    //console.log(timeNowFormatted);
+    var currentTextArea = $("textarea")[index];
+    console.log(this);
+    console.log(index);
+    console.log(currentTextArea);
+    if (timeFormat.isBefore(timeNowFormat))
     {
         console.log("Is before");
-    } else if (timeFormat.isAfter(timeNowFormatted)) {
+        $("textarea").eq(index).addClass("past");
+    } else if (timeFormat.isAfter(timeNowFormat)) {
         console.log("Is after");
+        $("textarea").eq(index).addClass("future");
     } else {
         console.log("Is same");
+        $("textarea").eq(index).addClass("present");
     };
 });
-
-/* let momentTime = moment("13:30", 'ha');
-let laterMomentTime = moment("15:00", 'ha');
-
-if(momentTime.isBefore(laterMomentTime)){
-  console.log("Yes 1:30 pm is earlier");
-}
- */
 
 // past, present, future change colours 
 
