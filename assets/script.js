@@ -20,10 +20,32 @@ for (var i = 0; i < timeArr.length; i++) {
     console.log(time);
 }
 
-$.each(timeArr, function(index, element) {
-    console.log(index, element);
+$.each(timeArr, function(index, element) 
+{
+    console.log("the index is: " + index + " The element is: " + element.innerHTML);
+    var time = element.innerHTML;
+    var timeFormat = moment(time, 'ha');
+    console.log(timeFormat);
+    var timeNow = moment();
+    var timeNowFormatted = moment(timeNow, 'ha');
+    console.log(timeNowFormatted);
+    if (timeFormat.isBefore(timeNowFormatted))
+    {
+        console.log("Is before");
+    } else if (timeFormat.isAfter(timeNowFormatted)) {
+        console.log("Is after");
+    } else {
+        console.log("Is same");
+    };
 });
 
+/* let momentTime = moment("13:30", 'ha');
+let laterMomentTime = moment("15:00", 'ha');
+
+if(momentTime.isBefore(laterMomentTime)){
+  console.log("Yes 1:30 pm is earlier");
+}
+ */
 
 // past, present, future change colours 
 
