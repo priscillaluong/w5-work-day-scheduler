@@ -1,6 +1,7 @@
-var today = moment().format("DD/MM/YY");
+var now = moment();
+$("#currentDay").text(now.format("dddd, Do MMMM YYYY, h:mm:ss a"));
 
-console.log(today);
+// moment.js to dynamically update seconds
 
 
 
