@@ -13,10 +13,8 @@ console.log(test);
 console.log(test1);
 console.log(test2);
  */
-var test = $("textarea");
-var test1 = $("textarea")[0];
-console.log(test);
-console.log(test1);
+
+ // check if time-block is before, same or after current time
 
 var timeArr = $(".time");
 
@@ -51,17 +49,20 @@ $.each(timeArr, function(index, element)
     };
 });
 
-// past, present, future change colours 
+//store message to local storage
 
-/* $.each(abilities, function(i, ability) {
-    abilityEl.append("<div>" + ability + "</div>");
-})
+var btnArr = $(".saveBtn");
 
-if 
+$.each(btnArr, function(index, element) {
+    $(".saveBtn").eq(index).click(function() {
+        event.preventDefault();
+    })
+});
 
-$("textarea").addClass("past");
-$("textarea").addClass("present");
-$("textarea").addClass("future"); */
+/* $(".saveBtn").click(function() {
+    event.preventDefault();
+    console.log("Successful click");
+}) */
 
 function a(){
     localStorage.setItem('hour-14', 'text value')
