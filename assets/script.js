@@ -6,18 +6,24 @@ var update = function(){
 } 
 setInterval(update, 1000);
 
-var blocks = $(".time");
-var blocks2 = $(".container").children().eq().children("#time").html();
+var test = $(".time");
+var test1 = $(".time")[0];
+var test2 = $(".time")[1].innerHTML;
+console.log(test);
+console.log(test1);
+console.log(test2);
 
-/* var blockLength = $(".container").children();
-for (var i = 0; i < blockLength.length; i++) {
-    var blocks = $(".container").children().eq(i).children("#time").html();
-    var time = blocks;
+var timeArr = $(".time");
+
+for (var i = 0; i < timeArr.length; i++) {
+    var time = timeArr[i].innerHTML;
     console.log(time);
-} */
+}
 
-console.log(blocks);
-console.log(blocks2);
+$.each(timeArr, function(index, element) {
+    console.log(index, element);
+});
+
 
 // past, present, future change colours 
 
