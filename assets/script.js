@@ -56,8 +56,33 @@ var btnArr = $(".saveBtn");
 $.each(btnArr, function(index, element) {
     $(".saveBtn").eq(index).click(function() {
         event.preventDefault();
+        var textEl = $("textarea").eq(index).val();
+        console.log(textEl);
+
+        var savedMessages = JSON.parse(localStorage.getItem('savedmessage'));
+        var newMessage = ({
+            time: timeArr.eq(index).text(),
+            message: textEl,
+        });
+        function checkValue(x) {
+            return x["time"] === timeArr.eq(index).text();
+        }
+        var check = savedMessages.some(checkValue);
+        
+        console.log(check);
+        savedMessages.push(newMessage);
+        localStorage.setItem("savedmessage", JSON.stringify(savedMessages));
+        renderMessage();
+
     })
 });
+
+
+
+function renderMessage() {
+    var savedMessages = JSON.parse(localStorage.getItem('savedmessage'));
+    console.log(savedMessages);
+}
 
 /* $(".saveBtn").click(function() {
     event.preventDefault();
