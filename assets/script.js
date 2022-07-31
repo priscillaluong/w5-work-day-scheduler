@@ -6,10 +6,6 @@ var update = function(){
 } 
 setInterval(update, 1000);
 
-var test = $("textarea").eq(1);
-console.log(test);
-test.text("test");
-
  // check if time-block is before, same or after current time
 
 var timeArr = $(".time");
@@ -38,14 +34,23 @@ var btnArr = $(".saveBtn");
 
 $.each(btnArr, function(index) {
     $(".saveBtn").eq(index).click(function() {
+        displayNotif();
         event.preventDefault();
         var textEl = $("textarea").eq(index).val();
         console.log(textEl);
         localStorage.setItem('hour-' + index, textEl);
-
-
+        displayNotif();
     })
 });
+
+// successfully saved message appears and disappears
+
+function displayNotif() {
+    $("#notif").show();
+    setTimeout(function(){
+        $("#notif").hide();
+    }, 2000);
+};
 
 //get message when page reloads
 
