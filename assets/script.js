@@ -69,6 +69,7 @@ window.onload = function() {
 // clear all entries 
 
 $("#clear").click(function() {
+    console.log("function working");
     localStorage.clear();
     window.location.reload();
 });
