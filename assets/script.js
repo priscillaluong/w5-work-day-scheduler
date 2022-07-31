@@ -43,20 +43,11 @@ $.each(btnArr, function(index) {
         console.log(textEl);
 
         localStorage.setItem('hour-' + index, textEl);
-/* 
-        renderMessage(index *//* ); */
+
     })
 });
 
-/* function renderMessage(index) {
-    //var savedMessages = JSON.parse(localStorage.getItem('hour-' + index));
-    var displayMsg = localStorage.getItem('hour-' + index);
-    console.log(displayMsg);
-    console.log(index);
-    var textArea = $("textarea").eq(index);
-    console.log(textArea);
-    textArea.text(displayMsg);
-} */
+//get message when page reloads
 
 var textArea = $("textarea");
 

@@ -120,3 +120,40 @@ document.onreadystatechange = function () {
         init();
     }
 }
+
+$.each(btnArr, function(index, element) {
+    $(".saveBtn").eq(index).click(function() {
+        event.preventDefault();
+        var textEl = $("textarea").eq(index).val();
+        console.log(textEl);
+
+        var savedMessages = JSON.parse(localStorage.getItem('hour-' + index)) || [];
+        var newMessage = ({
+            time: timeArr.eq(index).text(),
+            message: textEl,
+        });
+        console.log(newMessage);
+        //replace old value with new
+        var objIndex = savedMessages.findIndex(checkValue);
+        savedMessages.splice(objIndex, 1);
+        console.log(objIndex);
+
+        function checkValue(x) {
+            return x["time"] === timeArr.eq(index).text();
+        }
+        // save item
+        savedMessages.push(newMessage);
+        console.log(savedMessages);
+        localStorage.setItem('hour-' + index, JSON.stringify(savedMessages));
+        // render message to box
+//        var displayMsg = JSON.parse(localStorage.getItem('hour-' + index));
+        var displayMsg = localStorage.getItem('hour-' + index);
+
+        var test = $(".row").children('textarea').eq(index);
+        console.log(test);
+        console.log(displayMsg);
+        console.log(typeof(displayMsg));
+
+        var targetTextEl = $("textarea")[index];
+        test.text(displayMsg.message);
+        console.log(displayMsg.message);
