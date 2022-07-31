@@ -41,8 +41,8 @@ $.each(btnArr, function(index) {
         event.preventDefault();
         var textEl = $("textarea").eq(index).val();
         console.log(textEl);
-
         localStorage.setItem('hour-' + index, textEl);
+
 
     })
 });

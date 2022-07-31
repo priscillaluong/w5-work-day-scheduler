@@ -4,6 +4,13 @@ body {
   line-height: 1;
 }
 
+#notif {
+  text-align: center;
+  padding-bottom: 20px;
+  font-size: 18px;
+  display: block;
+};
+
 textarea {
   background: transparent;
   border: none;
