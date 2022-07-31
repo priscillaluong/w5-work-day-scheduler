@@ -52,7 +52,7 @@ function displayNotif() {
     }, 2000);
 };
 
-//get message when page reloads
+//get entries when page reloads
 
 var textArea = $("textarea");
 
@@ -65,3 +65,10 @@ window.onload = function() {
     }
 })
 };
+
+// clear all entries 
+
+$("#clear").click(function() {
+    localStorage.clear();
+    window.location.reload();
+});
