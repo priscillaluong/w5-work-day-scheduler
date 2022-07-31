@@ -53,34 +53,38 @@ $.each(timeArr, function(index, element)
 
 var btnArr = $(".saveBtn");
 
+
 $.each(btnArr, function(index, element) {
     $(".saveBtn").eq(index).click(function() {
         event.preventDefault();
         var textEl = $("textarea").eq(index).val();
         console.log(textEl);
 
-        var savedMessages = JSON.parse(localStorage.getItem('savedmessage'));
+        var savedMessages = JSON.parse(localStorage.getItem('hour-' + index)) || [];
         var newMessage = ({
             time: timeArr.eq(index).text(),
             message: textEl,
         });
+        savedMessages.push(newMessage);
+
+        //replace old value with new
+        var objIndex = savedMessages.findIndex(checkValue);
+        savedMessages.splice(objIndex, 1);
+        console.log(objIndex);
+
         function checkValue(x) {
             return x["time"] === timeArr.eq(index).text();
         }
-        var check = savedMessages.some(checkValue);
         
-        console.log(check);
-        savedMessages.push(newMessage);
-        localStorage.setItem("savedmessage", JSON.stringify(savedMessages));
+        localStorage.setItem('hour-' + index, JSON.stringify(savedMessages));
+        console.log("here");
         renderMessage();
-
+        console.log("here2");
     })
 });
 
-
-
 function renderMessage() {
-    var savedMessages = JSON.parse(localStorage.getItem('savedmessage'));
+    var savedMessages = JSON.parse(localStorage.getItem('hour-' + index));
     console.log(savedMessages);
 }
 
