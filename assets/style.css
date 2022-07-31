@@ -71,6 +71,7 @@ textarea {
   border-bottom-right-radius: 15px;
   background-color: #06aed5;
   color: white;
+  cursor: pointer;
 }
 
 i {
@@ -81,4 +82,26 @@ i {
 .saveBtn i:hover {
   font-size: 20px;
   transition: all 0.3s ease-in-out;
+}
+
+.btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+#clear {
+  background-color: #06aed5;
+  margin: 15px 0px;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 10px 30px;
+  border-radius: 5px;
+  border: 1px solid black;
+  cursor: pointer;
+  color: black;
+}
+
+#clear:hover {
+  background-color:  #ff6961;
 }
