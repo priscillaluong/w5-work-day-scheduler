@@ -16,7 +16,7 @@ Acceptance Criteria:
 
 * Analysed starter code, and used Bootstrap grid with existing CSS to build timeblocks. 
 
-* Used Moment.js to dynamically display current time, and to check if time block isBefore(), isAfter() or same as current time. 
+* Used Moment.js to dynamically display current time, and to check if time-block isBefore(), isAfter() or same as current time. 
 
 **Dynamic time display:**
 
@@ -28,7 +28,7 @@ var update = function(){
 setInterval(update, 1000);
 ```
 
-* Used jQuery to simplify DOM manipulation and event methods, including .click(), .show(), .hide(), -each().
+* Used jQuery to simplify DOM manipulation and event methods  e.g. .click(), .show(), .hide(), -each().
 
 ## Screenshot of Deployed Application:
 
