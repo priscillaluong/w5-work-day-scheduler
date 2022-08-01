@@ -50,7 +50,7 @@ Users have the option to clear all entries, or individually overwrite old entrie
 
 ## URL to Deployed Application:
 
-[Click here](https://priscillaluong.github.io/w4-timed-quiz/) 
+[Click here](https://priscillaluong.github.io/w5-work-day-scheduler/) 
 
 ### Final note:
 
